@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "ShantellSans";
+  src: url("./assets/fonts/ShantellSans-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ShantellSans Italic";
+  src: url("./assets/fonts/ShantellSans-Italic.ttf") format("truetype");
+}
+
+@theme {
+  --font-writing-italic:
+    "ShantellSans Italic", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "ShantellSans", system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
 }
