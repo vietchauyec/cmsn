@@ -27,9 +27,16 @@ const submit = (e: any) => {
   e.preventDefault();
   showSubmitMsg.value = true;
   const wish = e.target[0].value;
-  // send wish to telegram bot
-  const url = `https://api.telegram.org/bot${import.meta.env.VITE_TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${import.meta.env.VITE_TELEGRAM_CHAT_ID}&text=${wish}`;
-  fetch(url)
+  const url = "https://message-box-o9gg.shuttle.app/send";
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      msg: wish,
+    }),
+  })
     .then((response) => {
       if (response.ok) {
         console.log("Wish sent successfully");
