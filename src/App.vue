@@ -59,7 +59,7 @@ const submit = (e: any) => {
     class="pointer-events-none"
   />
   <section
-    class="relative z-10 flex min-h-screen w-full items-center justify-center p-16"
+    class="relative z-10 flex min-h-screen w-full items-center justify-center px-4 py-12"
     id="section-birthday"
   >
     <div class="flex h-fit w-full flex-row items-center gap-8 max-md:flex-col">
