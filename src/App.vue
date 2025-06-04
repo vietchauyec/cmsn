@@ -6,6 +6,7 @@ import { ref } from "vue";
 var message = "";
 const birthyear = 2004;
 const today = new Date();
+today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
 const birthday = new Date(new Date().getFullYear(), 5, 5);
 
 if (today > birthday) {
