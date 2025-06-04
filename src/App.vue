@@ -26,7 +26,6 @@ if (days === 0) {
 const showSubmitMsg = ref(false);
 const submit = (e: any) => {
   e.preventDefault();
-  showSubmitMsg.value = true;
   const wish = e.target[0].value;
   const url = "https://message-box-o9gg.shuttle.app/send";
   fetch(url, {
@@ -42,6 +41,7 @@ const submit = (e: any) => {
     .then((response) => {
       if (response.ok) {
         console.log("Wish sent successfully");
+        showSubmitMsg.value = true;
       } else {
         console.error("Error sending wish");
       }
