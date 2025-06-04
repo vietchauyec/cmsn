@@ -30,6 +30,7 @@ const submit = (e: any) => {
   const url = "https://message-box-o9gg.shuttle.app/send";
   fetch(url, {
     method: "POST",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
