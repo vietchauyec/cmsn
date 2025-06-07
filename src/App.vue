@@ -3,31 +3,13 @@ import { differenceInCalendarDays } from "date-fns";
 import particleOptions from "./assets/config/particles.json";
 import { ref } from "vue";
 
-var message = "";
-const birthyear = 2004;
-const today = new Date();
-today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
-const birthday = new Date(new Date().getFullYear(), 5, 5);
-
-if (today > birthday) {
-  birthday.setFullYear(today.getFullYear() + 1);
-}
-
-var days = differenceInCalendarDays(birthday, today);
-if (import.meta.env.MODE === "development") {
-  days = 0; // for testing purposes
-}
-if (days === 0) {
-  message = `Chúc mừng sinh nhật thứ ${today.getFullYear() - birthyear} của Lena!!!`;
-} else {
-  message = `Còn ${days} ngày mới tới sinh nhật cơ 🥺`;
-}
+const message = "Lời Chúc Từ Những Trái Cam Đáng Yêu 🥰"
 
 const showSubmitMsg = ref(false);
 const submit = (e: any) => {
   e.preventDefault();
   const wish = e.target[0].value;
-  const url = "https://message-box-o9gg.shuttle.app/send";
+  const url = "https://message-box-znwn.shuttle.app"; 
   fetch(url, {
     method: "POST",
     headers: {
@@ -54,7 +36,6 @@ const submit = (e: any) => {
 <template>
   <vue-particles
     id="tsparticles-bday"
-    v-if="days === 0"
     :options="particleOptions"
     class="pointer-events-none"
   />
@@ -64,65 +45,66 @@ const submit = (e: any) => {
   >
     <div class="flex h-fit w-full flex-row items-center gap-8 max-md:flex-col">
       <div
-        class="flex h-full w-full flex-col items-center self-stretch rounded-md border-2 border-rose-300 bg-rose-200 p-8 text-center md:max-w-2/3"
+        class="flex h-full w-full flex-col items-center self-stretch rounded-md border-2 border-orange-300 bg-orange-200 p-8 text-center md:max-w-2/3"
       >
         <h1 class="mb-4 text-xl font-semibold">{{ message }}</h1>
-        <h3 v-if="days !== 0" class="font-writing-italic mb-4">
-          Nhưng thôi cứ đọc thư đi 😎 Ngày sinh nhật vào đọc lại thì web đẹp hơn
-          xíu
-        </h3>
         <span class="flex flex-col gap-2 text-justify">
           <p>
-            Hì tui làm thêm cái web lặt vặt chúc mừng sinh nhật em yêu lena 👽
+            hehe, chúc mừng 2 chị đã chính thức kết thúc hành trình sinh viên đầy kỉ niệm, bước vào hành trình thất nghiệp đầy kịch tính❤️❤️
           </p>
           <p>
-            Lena tuổi mới trước hết là thật mạnh khỏe đã ạ. Sức khỏe tốt còn để
-            đạt được ti tỉ mục tiêu nữa 💪
+            Lá thư này là lời cảm ơn của BCM thế hệ thứ 22 gửi tới 2 chị.
           </p>
           <p>
-            Hơn nữa là chúc Lena ngày càng xinh đẹp. Xinh rồi mà xinh nữa hê hê.
-            Còn phải tài sắc vẹn toàn nữa nên là chúc Lena học hành làm việc
-            giỏi giang chăm chỉ. Học đâu thuận đó, thi cử gì cũng perfect 🤓
+            Chúng em cám ơn 2 chị đã đồng hành cùng chúng em từ những bước chân đầu vào đại học.
           </p>
           <p>
-            Và đặc biệt là chúc Lena thật hạnh phúc ạ. Dù làm gì thì cũng phải
-            cảm thấy hạnh phúc và hài lòng, không vướng bận và không hối hận 🎈
+            Cám ơn 2 chị vì đã mang tới 1 môi trường BCM đầy niềm vui. 
           </p>
           <p>
-            Lần nữa happy birthday ạ, hi vọng Lena thích nha hehe. Món quả nhỏ
-            hoan hỉ hoan hỉ. love you 💞
+            Cám ơn 2 chị luôn quan tâm và bảo vệ ban trong suốt nhiệm kì.
           </p>
+          <p>
+            Và, cám ơn 2 chị vì đã ở đây tới thời điểm hiện tại, cùng chúng em bước tiếp❤️
+          </p>
+          <p>
+            Tương lai thì không nói trước được, nhưng bọn em tin là với những gì 2 chị đã và đang cố gắng, chắc chắn sẽ có được những thành công xứng đáng với nỗ lực của mình.
+          </p>
+          <p>
+            Biết ơn và trân trọng.
+          </p>
+
           <div class="flex flex-col items-center self-end pr-8">
             <img
-              src="./assets/oia-uia.gif"
+              src="./assets/yec.jpg"
               alt="oiia"
               class="object-fit h-20 w-20"
             />
-            <p class="font-writing-italic">long lò</p>
+            <p class="font-writing-italic">Ban Chuyên Môn 22nd 🍊</p>
           </div>
         </span>
       </div>
       <div
-        class="flex h-auto w-full flex-col items-center gap-4 self-stretch rounded-md border-2 border-rose-300 bg-rose-200 p-8 text-center md:max-w-1/3"
+        class="flex h-auto w-full flex-col items-center gap-4 self-stretch rounded-md border-2 border-orange-300 bg-orange-200 p-8 text-center md:max-w-1/3"
       >
-        <h1 class="text-xl font-semibold">Viết điều ước sinh nhật vô đây nè</h1>
+        <h1 class="text-xl font-semibold">Gửi lời nhắn của các chị vào đây</h1>
         <form
           v-on:submit.prevent
           @submit="submit"
           class="flex h-full min-h-40 w-full grow flex-col gap-4"
         >
           <textarea
-            class="h-full w-full grow resize-none rounded-md border-2 border-rose-300 bg-rose-100 p-2"
-            placeholder="Viết điều ước ở đây"
+            class="h-full w-full grow resize-none rounded-md border-2 border-orange-300 bg-orange-100 p-2"
+            placeholder=""
           ></textarea>
           <button
             type="submit"
-            class="mt-2 cursor-pointer rounded-md bg-rose-300 p-2"
+            class="mt-2 cursor-pointer rounded-md bg-orange-300 p-2"
           >
-            Gửi điều ước
+            Gửi lời nhắn
           </button>
           <p v-show="showSubmitMsg" class="font-writing-italic">
-            Yay nhận được òi, lena thích gì gửi tiếp i 😍
+            Chúng em nhận được rồi ạ, cảm ơn các chị ❤️
           </p>
         </form>
       </div>
