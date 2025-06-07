@@ -9,7 +9,7 @@ const showSubmitMsg = ref(false);
 const submit = (e: any) => {
   e.preventDefault();
   const wish = e.target[0].value;
-  const url = "https://message-box-znwn.shuttle.app"; 
+  const url = "https://message-box-znwn.shuttle.app/send"; 
   fetch(url, {
     method: "POST",
     headers: {
